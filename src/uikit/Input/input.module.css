@@ -1,0 +1,98 @@
+.container {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  outline: none;
+  height: 48px;
+  padding: calc(var(--spacing) * 1.5) calc(var(--spacing) * 2);
+  font-size: 16px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  color: var(--color-primary);
+
+  transition:
+    border-color 0.3s,
+    color 0.3s;
+
+  border-radius: var(--border-radius);
+
+  &::placeholder {
+    color: var(--color-light);
+
+    transition: all 0.3s;
+  }
+
+  &:focus {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    &::placeholder {
+      color: var(--color-primary);
+      transform: translateX(4px);
+    }
+  }
+}
+
+.error {
+  border-color: var(--color-error);
+  color: var(--color-error);
+
+  &::placeholder {
+    color: var(--color-error);
+  }
+
+  &:focus {
+    border-color: var(--color-error);
+    color: var(--color-error);
+
+    &::placeholder {
+      color: var(--color-error);
+    }
+  }
+}
+
+.valid {
+  border-color: var(--color-success);
+  color: var(--color-success);
+
+  &:focus {
+    border-color: var(--color-success);
+    color: var(--color-success);
+  }
+}
+
+.inputWithSuffixIcon {
+  padding-right: calc(var(--spacing) * 5);
+}
+
+.errorMessage {
+  position: absolute;
+  left: 20px;
+  bottom: -18px;
+  min-height: 16px;
+
+  opacity: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-error);
+  display: block;
+
+  transition: opacity 0.3s;
+}
+
+.errorMessageActive {
+  opacity: 1;
+}
+
+.suffixIconContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-right: calc(var(--spacing) * 2);
+  padding-left: var(--spacing);
+}
